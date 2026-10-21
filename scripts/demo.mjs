@@ -199,9 +199,9 @@ console.log("");
 await write(P, "pledger", "create_pledge", ["0641-6000,0641-6001", BY, "DEMAND_INCREASE", 2n * GEN, acct.fund.address, UNTIL], 4n * GEN);
 const s0 = BigInt(await read(P, "stake_for", [pid(0)]));
 await write(R, "reporter", "file_claim", [pid(0), "0641-6000"], GEN); // wrong stake: refunded
-claims.push(await file("reporter", R, pid(0), "0641-6000", "P0 Ativan 2 mg/mL", s0));
+claims.push(await file("reporter", R, pid(0), "0641-6000", "P0 Ativan 10 mL vials", s0));
 const c0a = claims.at(-1);
-claims.push(await file("reporter", R, pid(0), "0641-6001", "P0 Ativan 4 mg/mL, claimed at the same time", s0));
+claims.push(await file("reporter", R, pid(0), "0641-6001", "P0 Ativan 1 mL vials, claimed at the same time", s0));
 const c0b = claims.at(-1);
 await write(R, "reporter", "file_claim", [pid(0), "0641-6000"], s0); // one open claim per product: refunded
 coverages[`${pid(0)} with two open claims`] = JSON.parse(await read(P, "coverage", [pid(0)]));

@@ -1,0 +1,508 @@
+{
+  "contract": "0xd8939fb77Fe683F41f7999f3B1c23a1000363363",
+  "accounts": {
+    "pledger": "0x7Fba25f90221cd48A7c4C32e1A7fb09ec39B87eB",
+    "reporter": "0x62F7d7a767148c8a276bDeAFE0b48d9B5B0ACCAc",
+    "fund": "0xE8f23CeAeA3EebeB3a0c5C044c4660A4e78A9bb1",
+    "bystander": "0x8b83F036D2D3C77b86725E35971656D143a56d72"
+  },
+  "pledges": [
+    "pledge_0",
+    "pledge_1",
+    "pledge_2",
+    "pledge_3",
+    "pledge_4",
+    "pledge_5",
+    "pledge_6"
+  ],
+  "claims": [
+    "claim_0",
+    "claim_1",
+    "claim_2",
+    "claim_3",
+    "claim_4",
+    "claim_5",
+    "claim_6"
+  ],
+  "coverages": {
+    "pledge_0 with two open claims": {
+      "bond": "4000000000000000000",
+      "claims_open_until": "2027-06-30",
+      "covered": true,
+      "liability": "4000000000000000000",
+      "locked_until": "2027-06-30",
+      "open_products": [
+        "0641-6000",
+        "0641-6001"
+      ],
+      "payout": "2000000000000000000",
+      "pending_claims": 2,
+      "recover_by": "2026-10-01"
+    },
+    "pledge_0 after settling": {
+      "bond": "2200000000000000000",
+      "claims_open_until": "2027-06-30",
+      "covered": true,
+      "liability": "2000000000000000000",
+      "locked_until": "2027-06-30",
+      "open_products": [
+        "0641-6001"
+      ],
+      "payout": "2000000000000000000",
+      "pending_claims": 0,
+      "recover_by": "2026-10-01"
+    },
+    "pledge_6": {
+      "bond": "2000000000000000000",
+      "claims_open_until": "2027-03-31",
+      "covered": true,
+      "liability": "2000000000000000000",
+      "locked_until": "2027-03-31",
+      "open_products": [
+        "0409-1896"
+      ],
+      "payout": "2000000000000000000",
+      "pending_claims": 0,
+      "recover_by": "2026-12-31"
+    }
+  },
+  "reconciliations": [
+    {
+      "label": "two claims open on pledge P0",
+      "bonds": "4000000000000000000",
+      "pending_stakes": "400000000000000000",
+      "expected": "4400000000000000000",
+      "balance": "4400000000000000000",
+      "ok": true
+    },
+    {
+      "label": "after P0 settles",
+      "bonds": "2200000000000000000",
+      "pending_stakes": "0",
+      "expected": "2200000000000000000",
+      "balance": "2200000000000000000",
+      "ok": true
+    },
+    {
+      "label": "P1 and P5 claims open",
+      "bonds": "14600000000000000000",
+      "pending_stakes": "400000000000000000",
+      "expected": "15000000000000000000",
+      "balance": "15000000000000000000",
+      "ok": true
+    },
+    {
+      "label": "end of run",
+      "bonds": "10600000000000000000",
+      "pending_stakes": "0",
+      "expected": "10600000000000000000",
+      "balance": "10600000000000000000",
+      "ok": true
+    }
+  ],
+  "evidence": {
+    "claim_0": [
+      {
+        "packet_sha256": "6caeb9e10fb75af214195c839cbeaeebf254ca3bc3c6158f3d50aaedb3925e75",
+        "listings_sha256": "23938de9e869c3bc6f265e1270d3ef75a4e28ad074f28d74c195b92b28c6ef06",
+        "data_version": "2026-10-21",
+        "read_at": "2026-10-21T19:17:05",
+        "listings": 1
+      }
+    ],
+    "claim_1": [
+      {
+        "packet_sha256": "09b2d4b952c48047d56a73699994adc29ee5825b58f9efa028cd6b4649535875",
+        "listings_sha256": "fddb4632ae3ac96438bd5e4d5a519f195b097f9a8e476dabbd9d36a9677c70d2",
+        "data_version": "2026-10-21",
+        "read_at": "2026-10-21T19:17:24",
+        "listings": 1
+      }
+    ],
+    "claim_2": [
+      {
+        "packet_sha256": "19c49b0f08361bf4772ec088f3204b85db3b57c2412ee8b87eea7e0fda11453e",
+        "listings_sha256": "b4d903a9b027d723add5c3e45c5b23dfbb1372b206fc709809563b3934ca0846",
+        "data_version": "2026-10-21",
+        "read_at": "2026-10-21T19:20:33",
+        "listings": 2
+      },
+      {
+        "packet_sha256": "ab61eae6b1bd159b7015370d9eaeafb7efd871f11884c758141c3ac21d5f2606",
+        "listings_sha256": "b4d903a9b027d723add5c3e45c5b23dfbb1372b206fc709809563b3934ca0846",
+        "data_version": "2026-10-21",
+        "read_at": "2026-10-21T19:21:06",
+        "listings": 2
+      }
+    ],
+    "claim_3": [
+      {
+        "packet_sha256": "ad5164295ceb5ed5beaec02ff9aecf061cc10d7bf0043fc5b1eb61d24f4aef0a",
+        "listings_sha256": "a5425ab5a417122c7de53961495185739edc9a9d523f5df07ec2525885a003df",
+        "data_version": "2026-10-21",
+        "read_at": "2026-10-21T19:21:41",
+        "listings": 1
+      },
+      {
+        "packet_sha256": "132d6be888b59a14b93b4e5b78390aa1f0c26abba4cf03bd63eaa180378e4269",
+        "listings_sha256": "a5425ab5a417122c7de53961495185739edc9a9d523f5df07ec2525885a003df",
+        "data_version": "2026-10-21",
+        "read_at": "2026-10-21T19:22:02",
+        "listings": 1
+      }
+    ],
+    "claim_4": [
+      {
+        "packet_sha256": "366faaea600effd7d0f159b935752efeef8fa00c495e866e9e2426afa04a5105",
+        "listings_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "data_version": "",
+        "read_at": "2026-10-21T19:22:45",
+        "listings": 0
+      }
+    ],
+    "claim_5": [
+      {
+        "packet_sha256": "db26eaa2e581308c9878d832803d95c8cfa64c0b715209d290f6699a203f8586",
+        "listings_sha256": "62966cde167dd3bccb6c073a70f1c95630c36cd6d4106b4fa08d7604f558b4f4",
+        "data_version": "2026-10-21",
+        "read_at": "2026-10-21T19:23:22",
+        "listings": 1
+      }
+    ],
+    "claim_6": [
+      {
+        "packet_sha256": "18ddb81c057c5ac06ff4531b181315dc360218304bd82cdfd866fb1135dae0de",
+        "listings_sha256": "f38dba7e2b07499ac0d9c8af1cb6713df228c6c1834bb514d03c7e26b9fa9913",
+        "data_version": "2026-10-21",
+        "read_at": "2026-10-21T19:23:59",
+        "listings": 1
+      }
+    ]
+  },
+  "log": [
+    {
+      "who": "pledger",
+      "call": "create_pledge(\"641-6000\", \"2026-10-01\", \"\", 2 GEN, \"0xE8f23CeAeA3EebeB3a0c5C044c4660A4e78A9bb1\", \"2027-06-30\")",
+      "value": "2",
+      "hash": "0x29c8b76609773c9cadd1f1ccd3b6056553740208ccc2abf1061fe2a3cbf8c0a4",
+      "status": "ACCEPTED",
+      "exec": "SUCCESS",
+      "returned": "REFUNDED: ndcs must be 1 to 5 product NDCs like 0641-6000, separated by commas"
+    },
+    {
+      "who": "pledger",
+      "call": "create_pledge(\"9999-9999\", \"2026-10-01\", \"\", 2 GEN, \"0xE8f23CeAeA3EebeB3a0c5C044c4660A4e78A9bb1\", \"2027-06-30\")",
+      "value": "2",
+      "hash": "0x16111888ac2f393b443ac39cfcbf3beac197ffab8b71f7a769dbc26a65e1b5ef",
+      "status": "ACCEPTED",
+      "exec": "SUCCESS",
+      "returned": "REFUNDED: 9999-9999 is not in FDA's NDC directory"
+    },
+    {
+      "who": "pledger",
+      "call": "create_pledge(\"0641-6000,0641-6001\", \"2026-10-01\", \"\", 2 GEN, \"0xE8f23CeAeA3EebeB3a0c5C044c4660A4e78A9bb1\", \"2027-06-30\")",
+      "value": "3",
+      "hash": "0x6160d205cef9758eeac75017eba778e1cccb1f5067b8c2480f0487254b1ec152",
+      "status": "ACCEPTED",
+      "exec": "SUCCESS",
+      "returned": "REFUNDED: the bond must cover every product: at least 2 x payout"
+    },
+    {
+      "who": "pledger",
+      "call": "create_pledge(\"0641-6000\", \"2026-12-01\", \"\", 2 GEN, \"0xE8f23CeAeA3EebeB3a0c5C044c4660A4e78A9bb1\", \"2026-12-15\")",
+      "value": "2",
+      "hash": "0x8a7a11d44fcc6891d9cb754ff1c7e13361d84e791c9d2d8e6a22bb4a0a64fae0",
+      "status": "ACCEPTED",
+      "exec": "SUCCESS",
+      "returned": "REFUNDED: expires must be a YYYY-MM-DD date, not in the past, and 2026-12-31 or later (the recovery date plus 30 days to report)"
+    },
+    {
+      "who": "pledger",
+      "call": "create_pledge(\"0641-6000\", \"2026-10-01\", \"MANUFACTURING\", 2 GEN, \"0xE8f23CeAeA3EebeB3a0c5C044c4660A4e78A9bb1\", \"2027-06-30\")",
+      "value": "2",
+      "hash": "0xe5b61f1a8b21dbf00b78bb6dc0616ab9090e8e95c7e536e3dd3cf56646ac465e",
+      "status": "ACCEPTED",
+      "exec": "SUCCESS",
+      "returned": "REFUNDED: excused may only list DEMAND_INCREASE, INGREDIENT_SHORTAGE, SHIPPING_DELAY, REGULATORY_DELAY"
+    },
+    {
+      "who": "pledger",
+      "call": "create_pledge(\"0641-6000,0641-6001\", \"2026-10-01\", \"DEMAND_INCREASE\", 2 GEN, \"0xE8f23CeAeA3EebeB3a0c5C044c4660A4e78A9bb1\", \"2027-06-30\")",
+      "value": "4",
+      "hash": "0xafe8f9a787ae4aa573f61721f34459938db8fba214806cacaaebe1b6dfacebce",
+      "status": "ACCEPTED",
+      "exec": "SUCCESS",
+      "returned": "pledge_0"
+    },
+    {
+      "who": "reporter",
+      "call": "file_claim(\"pledge_0\", \"0641-6000\")",
+      "value": "1",
+      "hash": "0x2281cb848b765ba222a65de4aacb832aa88fee6f7a9d2a93ad717b9d5fd8414e",
+      "status": "ACCEPTED",
+      "exec": "SUCCESS",
+      "returned": "REFUNDED: A claim on this pledge stakes exactly 200000000000000000 wei (10% of the payout)"
+    },
+    {
+      "who": "reporter",
+      "call": "file_claim(\"pledge_0\", \"0641-6000\")",
+      "value": "0.2",
+      "hash": "0x137cc8baf93507421e3a1124efca70a261ca58bc4eecafbab51be94aa45e5245",
+      "status": "ACCEPTED",
+      "exec": "SUCCESS",
+      "returned": "claim_0"
+    },
+    {
+      "who": "reporter",
+      "call": "file_claim(\"pledge_0\", \"0641-6001\")",
+      "value": "0.2",
+      "hash": "0x604a79d89343d134cbe3bca3d96a37a8cbda4128dac68300d2e90b7f7988b82e",
+      "status": "ACCEPTED",
+      "exec": "SUCCESS",
+      "returned": "claim_1"
+    },
+    {
+      "who": "reporter",
+      "call": "file_claim(\"pledge_0\", \"0641-6000\")",
+      "value": "0.2",
+      "hash": "0x1f424a2fee1d507f5a7efdd2533e9afb8071a2e00d1ea3aeaed551c9a4a35550",
+      "status": "ACCEPTED",
+      "exec": "SUCCESS",
+      "returned": "REFUNDED: claim_0 is already open for this product"
+    },
+    {
+      "who": "reporter",
+      "call": "settle(\"claim_0\")",
+      "value": "0",
+      "hash": "0xa29d47beefb6a4d21a6f6ef689932944de513044b4ad20e3c4ed2d2e2f427feb",
+      "status": "ACCEPTED",
+      "exec": "ERROR",
+      "refused": "The response window is still open; only the pledger can concede early"
+    },
+    {
+      "who": "fund",
+      "call": "settle(\"claim_0\")",
+      "value": "0",
+      "hash": "0xd632a81a71cae26182cbfa33af07b28984eab0a4c22671b3c814a04136640253",
+      "status": "ACCEPTED",
+      "exec": "ERROR",
+      "refused": "The response window is still open; only the pledger can concede early"
+    },
+    {
+      "who": "pledger",
+      "call": "settle(\"claim_0\")",
+      "value": "0",
+      "hash": "0x9b48b5c70a90ed0ff1f33de133eb51ae00c888c949c3f073ac948649d82f129c",
+      "status": "ACCEPTED",
+      "exec": "SUCCESS",
+      "returned": "paid"
+    },
+    {
+      "who": "reporter",
+      "call": "settle(\"claim_1\")",
+      "value": "0",
+      "hash": "0xa4af7da8c2affafe7fb7db3c1d4e0aca6d12943a98a0a3afcb416063db7cccab",
+      "status": "ACCEPTED",
+      "exec": "SUCCESS",
+      "returned": "stake_to_bond"
+    },
+    {
+      "who": "reporter",
+      "call": "file_claim(\"pledge_0\", \"0641-6000\")",
+      "value": "0.2",
+      "hash": "0x3d050f530ed2ce3c4acf9e8754ffa522d2fe917090f8598b3453f0016b2daa65",
+      "status": "ACCEPTED",
+      "exec": "SUCCESS",
+      "returned": "REFUNDED: This product has already been paid from this pledge"
+    },
+    {
+      "who": "pledger",
+      "call": "create_pledge(\"0264-9872\", \"2026-10-01\", \"DEMAND_INCREASE\", 2 GEN, \"0xE8f23CeAeA3EebeB3a0c5C044c4660A4e78A9bb1\", \"2027-06-30\")",
+      "value": "2",
+      "hash": "0xe8caab237c44e36f8ba24d2d160216ce48254ba6b82ee59fa9ceb8cd9b369b6b",
+      "status": "ACCEPTED",
+      "exec": "SUCCESS",
+      "returned": "pledge_1"
+    },
+    {
+      "who": "reporter",
+      "call": "file_claim(\"pledge_1\", \"0264-9872\")",
+      "value": "0.2",
+      "hash": "0x5c404af25bd7f4bd49128408b2c90395f3f30a4fa26ca0f5a849f2d0cf305b9b",
+      "status": "ACCEPTED",
+      "exec": "SUCCESS",
+      "returned": "claim_2"
+    },
+    {
+      "who": "pledger",
+      "call": "contest(\"claim_2\")",
+      "value": "0",
+      "hash": "0xe3784c085719c21e45f04318323589df5d4fe680608e70e49c06a89105a162a2",
+      "status": "ACCEPTED",
+      "exec": "SUCCESS",
+      "returned": "BREACHED"
+    },
+    {
+      "who": "pledger",
+      "call": "create_pledge(\"57844-120\", \"2026-10-01\", \"\", 2 GEN, \"0xE8f23CeAeA3EebeB3a0c5C044c4660A4e78A9bb1\", \"2027-06-30\")",
+      "value": "2",
+      "hash": "0xfa7dda91ff23e873513e925f4720e27acb7f898f903e6aad3805be13e5c91d46",
+      "status": "ACCEPTED",
+      "exec": "SUCCESS",
+      "returned": "pledge_2"
+    },
+    {
+      "who": "reporter",
+      "call": "file_claim(\"pledge_2\", \"57844-120\")",
+      "value": "0.2",
+      "hash": "0x1e5ce189c9176376c7637f151373e0842094665c4d1f8e37fdb1d063b2a29351",
+      "status": "ACCEPTED",
+      "exec": "SUCCESS",
+      "returned": "claim_3"
+    },
+    {
+      "who": "reporter",
+      "call": "contest(\"claim_3\")",
+      "value": "0",
+      "hash": "0x345a594cb96440837365abaee275fac482c0b326f8af52e581c03786e074ccc4",
+      "status": "ACCEPTED",
+      "exec": "SUCCESS",
+      "returned": "KEPT"
+    },
+    {
+      "who": "reporter",
+      "call": "settle(\"claim_3\")",
+      "value": "0",
+      "hash": "0xcf7fb980bdef64bf010d46beda9b5ee472dc5a991f9a9848054145555fc824ab",
+      "status": "ACCEPTED",
+      "exec": "SUCCESS",
+      "returned": "stake_to_bond"
+    },
+    {
+      "who": "pledger",
+      "call": "create_pledge(\"0002-7510\", \"2026-10-01\", \"\", 2 GEN, \"0xE8f23CeAeA3EebeB3a0c5C044c4660A4e78A9bb1\", \"2027-06-30\")",
+      "value": "2",
+      "hash": "0x4c949fbaf2d8b798850c936b99fbe81768afb170bd064c298422de0685e6b40e",
+      "status": "ACCEPTED",
+      "exec": "SUCCESS",
+      "returned": "pledge_3"
+    },
+    {
+      "who": "reporter",
+      "call": "file_claim(\"pledge_3\", \"0002-7510\")",
+      "value": "0.2",
+      "hash": "0xe57fb03e555a03ac49e1a191cefb91d208a8377cb80cae3f3b148e20d69f561f",
+      "status": "ACCEPTED",
+      "exec": "SUCCESS",
+      "returned": "claim_4"
+    },
+    {
+      "who": "reporter",
+      "call": "settle(\"claim_4\")",
+      "value": "0",
+      "hash": "0x7255b101781627c923cb75d054e912cb77df3ca97b9bd68e07566e7fd8ea7ed9",
+      "status": "ACCEPTED",
+      "exec": "SUCCESS",
+      "returned": "stake_to_bond"
+    },
+    {
+      "who": "pledger",
+      "call": "create_pledge(\"43547-410\", \"2026-10-01\", \"\", 2 GEN, \"0xE8f23CeAeA3EebeB3a0c5C044c4660A4e78A9bb1\", \"2027-06-30\")",
+      "value": "2",
+      "hash": "0x832037f9f4d970192994fafb83918c3bfb3a7cf90e4b98c723768b1ae8b34c29",
+      "status": "ACCEPTED",
+      "exec": "SUCCESS",
+      "returned": "pledge_4"
+    },
+    {
+      "who": "reporter",
+      "call": "file_claim(\"pledge_4\", \"43547-410\")",
+      "value": "0.2",
+      "hash": "0x02939b7d24a8c9b35f8354f44fede92e1ba10a6f432d509444a4cfc581534c8d",
+      "status": "ACCEPTED",
+      "exec": "SUCCESS",
+      "returned": "claim_5"
+    },
+    {
+      "who": "reporter",
+      "call": "settle(\"claim_5\")",
+      "value": "0",
+      "hash": "0xa2cd588472e64d0520c0ced9ea7f291d29bf562a5cd24dd464d447403ef3d0d0",
+      "status": "ACCEPTED",
+      "exec": "SUCCESS",
+      "returned": "stake_returned"
+    },
+    {
+      "who": "pledger",
+      "call": "create_pledge(\"55513-800\", \"2026-10-01\", \"\", 2 GEN, \"0xE8f23CeAeA3EebeB3a0c5C044c4660A4e78A9bb1\", \"2027-06-30\")",
+      "value": "2",
+      "hash": "0xd0281fa4263b45568bfdea31e8cf556f6ee8e095b6bca51976b4cfb25b8d578b",
+      "status": "ACCEPTED",
+      "exec": "SUCCESS",
+      "returned": "pledge_5"
+    },
+    {
+      "who": "reporter",
+      "call": "file_claim(\"pledge_5\", \"55513-800\")",
+      "value": "0.2",
+      "hash": "0xd71b1acf17daacdf70f5a76628cb92784b6018378998096d262489c7ba65e6bc",
+      "status": "ACCEPTED",
+      "exec": "SUCCESS",
+      "returned": "claim_6"
+    },
+    {
+      "who": "pledger",
+      "call": "create_pledge(\"0409-1896\", \"2026-12-31\", \"\", 2 GEN, \"0xE8f23CeAeA3EebeB3a0c5C044c4660A4e78A9bb1\", \"2027-03-31\")",
+      "value": "2",
+      "hash": "0xe8eb6b6ac9469e11f7572c60ae9add9f32efd2f3473c4d982cafcc6dff95d9df",
+      "status": "ACCEPTED",
+      "exec": "SUCCESS",
+      "returned": "pledge_6"
+    },
+    {
+      "who": "reporter",
+      "call": "file_claim(\"pledge_6\", \"0409-1896\")",
+      "value": "0.2",
+      "hash": "0xcf21f847d6c7d197d2cd6eafd4c3c33aee92b848f9a5203d4bb9003ba153d4ed",
+      "status": "ACCEPTED",
+      "exec": "SUCCESS",
+      "returned": "REFUNDED: The products were promised back by 2026-12-31; claims open the day after"
+    },
+    {
+      "who": "pledger",
+      "call": "withdraw(\"pledge_6\")",
+      "value": "0",
+      "hash": "0x69624329f7cd2e169e4f48305494b93ce5a9f1b32a3cdae129696d0b80820d2d",
+      "status": "ACCEPTED",
+      "exec": "ERROR",
+      "refused": "The bond stays until the pledge expires on 2027-03-31"
+    },
+    {
+      "who": "bystander",
+      "call": "settle(\"claim_2\")",
+      "value": "0",
+      "hash": "0x67ffa72a465cd62e167bdc3da862e28e7ec97fa6d4f6ebddc1b2a2090a1a3fd4",
+      "status": "ACCEPTED",
+      "exec": "ERROR",
+      "refused": "The response window is still open; only the pledger can concede early"
+    },
+    {
+      "who": "bystander",
+      "call": "settle(\"claim_2\")",
+      "value": "0",
+      "hash": "0xee9538e2aa930d5218a09ec7d7000f6e572fe5004fb2edcfc7f766ba6e254664",
+      "status": "ACCEPTED",
+      "exec": "SUCCESS",
+      "returned": "paid"
+    },
+    {
+      "who": "bystander",
+      "call": "settle(\"claim_6\")",
+      "value": "0",
+      "hash": "0x0c30ba6a7c6ff9b9885cbd2d6b078b52c706a087376de8357dc4d4063ced6905",
+      "status": "ACCEPTED",
+      "exec": "SUCCESS",
+      "returned": "paid"
+    }
+  ]
+}
