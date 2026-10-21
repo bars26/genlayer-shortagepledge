@@ -1,0 +1,10 @@
+{
+  "name": "ShortagePledge",
+  "short_name": "ShortagePledge",
+  "description": "Drug-shortage recovery pledges, backed by GEN and ruled by GenLayer validators",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FBF6EE",
+  "theme_color": "#FBF6EE",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}
