@@ -1,0 +1,9 @@
+{
+  "wallet": "0x4f80b5c475fced34fc9a07ffccf39e1adc1406bf",
+  "note": "MetaMask test from the production app (shortagepledge-bars26.vercel.app): the tester looks up Hikma lorazepam 4 mg/mL (0641-6047, listed Unavailable, FDA notes \"Estimated recovery: TBD\") without a wallet, backs it from the lookup with a recovery date of 2026-10-01, reports it still short, and concedes as the pledger.",
+  "steps": [
+    ["Back 0641-6047 from the lookup: back on the shelf by 2026-10-01, no excused causes, payout 1 GEN, bond 1 GEN (1 product x payout), beneficiary = own wallet", "1 GEN", "pledge_7; product frozen from FDA's NDC directory with its listing; open until 2026-12-30", "0x9954f46f1f896762d407fa2bb1aa92d36b3bea82a77e911d2fed5bb8feff7c6f"],
+    ["Report a medicine still short: 0641-6047", "0.1 GEN", "claim_7 BREACHED (not_recovered): still Unavailable, FDA re-verified 2026-10-14; FDA's reason \"Other\", validators read the notes: cause unstated, not excused", "0x3c99171df6c8d891cb6ee69066ec3f84de966e167ad59afec96347722aa42686"],
+    ["Concede and pay now (pledger)", "", "paid in full: 0.9 GEN to the beneficiary, 0.1 GEN reward + 0.1 GEN stake to the reporter (transfers 0x4b436280…, 0xcc41ae4e…)", "0xe6d50a6c5ae8f341fe71e04637132f285cb055a795e05580fc6de25c83c9d63a"]
+  ]
+}

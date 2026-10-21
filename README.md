@@ -63,6 +63,10 @@ stake, a second claim on a product that already has one open, and a refile on a 
 balance was reconciled with `totals()` (active bonds plus open stakes) at four points of the run, each time after every
 transfer had finalized.
 
+A MetaMask test from the live app is recorded at the end of the same file: Hikma lorazepam 4 mg/mL (0641-6047) looked up
+without a wallet, backed from the lookup, reported still short (validators read FDA's "Other" notes: cause unstated),
+and conceded by the pledger, paid in full.
+
 ## Who can do what (and the attacks this blocks)
 
 | Rule | Why |
